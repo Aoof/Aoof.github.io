@@ -162,6 +162,10 @@ hr {
     text-align: center;
   }
   
+  .nav .nav-link {
+    font-size: 0.8em; 
+  }
+  
   .projects-card {
     max-width: -webkit-fill-available !important;
     width: -webkit-fill-available !important;
