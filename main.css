@@ -186,3 +186,8 @@ hr {
   }
 
 }
+
+
+iframe {
+ overflow: hidden; 
+}
