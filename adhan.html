@@ -890,17 +890,19 @@
                     calculationMethod = adhan.CalculationMethod.Other()
                     break;
                 default:
+                    calculationMethod = adhan.CalculationMethod.Dubai()
                     break;
             }
             
             switch (_madhab) {
                 case 'shafi':
-                    Madhab = adhan.Madhab.Shafi
+                    Madhab = adhan.Madhab.Shafi;
                     break;
                 case 'hanafi':
-                    Madhab = athan.Madhab.Hanafi
+                    Madhab = adhan.Madhab.Hanafi;
                     break;
                 default:
+                    Madhab = adhan.madhab.Shafi;
                     break;
             }
 
