@@ -14,145 +14,6 @@
 </head>
 
 <body>
-
-    <script type="text/javascript">
-        function setCookie(cname, cvalue, exdays) {
-            var d = new Date();
-            d.setTime(d.getTime() + (exdays*24*60*60*1000));
-            var expires = "expires="+ d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-
-        function getCookie(cname) {
-            var name = cname + "=";
-            var decodedCookie = decodeURIComponent(document.cookie);
-            var ca = decodedCookie.split(';');
-            for(var i = 0; i <ca.length; i++) {
-                var c = ca[i];
-                while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-        function setup(longitude, latitude, timezone, calculationMethod, Madhab) {
-
-            function prayerName(prayer) {
-                if (prayer == adhan.Prayer.Fajr) {
-                    return "Fajr";
-                } else if (prayer == adhan.Prayer.Sunrise) {
-                    return "Sunrise";
-                } else if (prayer == adhan.Prayer.Dhuhr) {
-                    return "Dhuhr";
-                } else if (prayer == adhan.Prayer.Asr) {
-                    return "Asr";
-                } else if (prayer == adhan.Prayer.Maghrib) {
-                    return "Maghrib";
-                } else if (prayer == adhan.Prayer.Isha) {
-                    return "Isha";
-                } else if (prayer == adhan.Prayer.None) {
-                    return "None";
-                }
-            }
-        
-            var date = new Date();
-            var coordinates = new adhan.Coordinates(longitude, latitude);
-            var params = calculationMethod;
-            params.madhab = Madhab;
-            
-            var prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
-        
-            var sunnahTimes = new adhan.SunnahTimes(prayerTimes);
-            
-            document.querySelector('.prayerTimesContainer').innerHTML = `Prayer times for ${moment(date).format('MMMM DD, YYYY')}<br>
-                                                                            Fajr: ${moment(prayerTimes.fajr).tz(timezone).format('h:mm A')}<br>
-                                                                            Sunrise: ${moment(prayerTimes.sunrise).tz(timezone).format('h:mm A')}<br>
-                                                                            Dhuhr: ${moment(prayerTimes.dhuhr).tz(timezone).format('h:mm A')}<br>
-                                                                            Asr: ${moment(prayerTimes.asr).tz(timezone).format('h:mm A')}<br>
-                                                                            Maghrib: ${moment(prayerTimes.maghrib).tz(timezone).format('h:mm A')}<br>
-                                                                            Isha: ${moment(prayerTimes.isha).tz(timezone).format('h:mm A')}<br>
-                                                                        
-                                                                            Taraweeh: ${moment(sunnahTimes.middleOfTheNight).tz(timezone).format('h:mm A')}<br>
-                                                                            Qiyam: ${moment(sunnahTimes.lastThirdOfTheNight).tz(timezone).format('h:mm A')}<br><br>
-                                                                        
-                                                                            Current Prayer: ${prayerName(prayerTimes.currentPrayer())}<br><br>`
-            setTimeout(setup, 4000)
-        }
-
-        let longitude = getCookie('longitude') == '' ? 25.3965398 : JSON.parse(getCookie('longitude'))
-        let latitude = getCookie('latitude') == '' ? 55.468959299999995 : JSON.parse(getCookie('latitude'))
-        let timezone = getCookie('timezone') == '' ? "Asia/Dubai" : getCookie('timezone')
-        let calculationMethod = adhan.CalculationMethod.Dubai()
-        let Madhab = adhan.Madhab.Shafi
-
-        let _calculationMethod = getCookie("calculationMethod")
-        let _madhab = getCookie("madhab")
-
-        switch (_calculationMethod) {
-            case "muslimworldleague":
-                calculationMethod = adhan.CalculationMethod.MuslimWorldLeague()
-                break;
-            case "egyptian":
-                calculationMethod = adhan.CalculationMethod.Egyptian()
-                break;
-            case "karachi":
-                calculationMethod = adhan.CalculationMethod.Karachi()
-                break;
-            case "ummalqura":
-                calculationMethod = adhan.CalculationMethod.UmmAlQura()
-                break;
-            case "dubai":
-                calculationMethod = adhan.CalculationMethod.Dubai()
-                break;
-            case "qatar":
-                calculationMethod = adhan.CalculationMethod.Qatar()
-                break;
-            case "kuwait":
-                calculationMethod = adhan.CalculationMethod.Kwait()
-                break;
-            case "moonsightingcommittee":
-                calculationMethod = adhan.CalculationMethod.MoonsightingCommittee()
-                break;
-            case "singapore":
-                calculationMethod = adhan.CalculationMethod.Singapore()
-                break;
-            case "turkey":
-                calculationMethod = adhan.CalculationMethod.Turkey()
-                break;
-            case "tehran":
-                calculationMethod = adhan.CalculationMethod.Tehran()
-                break;
-            case "northamerica":
-                calculationMethod = adhan.CalculationMethod.NorthAmerica()
-                break;
-            case "other":
-                calculationMethod = adhan.CalculationMethod.Other()
-                break;
-            default:
-                break;
-        }
-        
-        switch (_madhab) {
-            case 'shafi':
-                Madhab = adhan.Madhab.Shafi
-                break;
-            case 'hanafi':
-                Madhab = adhan.Madhab.Hanafi
-                break;
-            default:
-                break;
-        }
-
-        
-        $(document).ready(()=> {
-            setup(longitude, latitude, timezone, calculationMethod, Madhab)
-        })
-        setup()
-    </script>
     <div class="h-100">
         <div class="row align-items-center h-100">
             <div class="col-6 mx-auto">
@@ -170,6 +31,145 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function setup(longitude, latitude, timezone, calculationMethod, Madhab) {
+
+        function prayerName(prayer) {
+            if (prayer == adhan.Prayer.Fajr) {
+                return "Fajr";
+            } else if (prayer == adhan.Prayer.Sunrise) {
+                return "Sunrise";
+            } else if (prayer == adhan.Prayer.Dhuhr) {
+                return "Dhuhr";
+            } else if (prayer == adhan.Prayer.Asr) {
+                return "Asr";
+            } else if (prayer == adhan.Prayer.Maghrib) {
+                return "Maghrib";
+            } else if (prayer == adhan.Prayer.Isha) {
+                return "Isha";
+            } else if (prayer == adhan.Prayer.None) {
+                return "None";
+            }
+        }
+    
+        var date = new Date();
+        var coordinates = new adhan.Coordinates(longitude, latitude);
+        var params = calculationMethod;
+        params.madhab = Madhab;
+        
+        var prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
+    
+        var sunnahTimes = new adhan.SunnahTimes(prayerTimes);
+        
+        document.querySelector('.prayerTimesContainer').innerHTML = `Prayer times for ${moment(date).format('MMMM DD, YYYY')}<br>
+                                                                        Fajr: ${moment(prayerTimes.fajr).tz(timezone).format('h:mm A')}<br>
+                                                                        Sunrise: ${moment(prayerTimes.sunrise).tz(timezone).format('h:mm A')}<br>
+                                                                        Dhuhr: ${moment(prayerTimes.dhuhr).tz(timezone).format('h:mm A')}<br>
+                                                                        Asr: ${moment(prayerTimes.asr).tz(timezone).format('h:mm A')}<br>
+                                                                        Maghrib: ${moment(prayerTimes.maghrib).tz(timezone).format('h:mm A')}<br>
+                                                                        Isha: ${moment(prayerTimes.isha).tz(timezone).format('h:mm A')}<br>
+                                                                    
+                                                                        Taraweeh: ${moment(sunnahTimes.middleOfTheNight).tz(timezone).format('h:mm A')}<br>
+                                                                        Qiyam: ${moment(sunnahTimes.lastThirdOfTheNight).tz(timezone).format('h:mm A')}<br><br>
+                                                                    
+                                                                        Current Prayer: ${prayerName(prayerTimes.currentPrayer())}<br><br>`
+        setTimeout(setup, 4000)
+    }
+
+    let longitude = getCookie('longitude') == '' ? 25.3965398 : JSON.parse(getCookie('longitude'))
+    let latitude = getCookie('latitude') == '' ? 55.468959299999995 : JSON.parse(getCookie('latitude'))
+    let timezone = getCookie('timezone') == '' ? "Asia/Dubai" : getCookie('timezone')
+    let calculationMethod = adhan.CalculationMethod.Dubai()
+    let Madhab = adhan.Madhab.Shafi
+
+    let _calculationMethod = getCookie("calculationMethod")
+    let _madhab = getCookie("madhab")
+
+    switch (_calculationMethod) {
+        case "muslimworldleague":
+            calculationMethod = adhan.CalculationMethod.MuslimWorldLeague()
+            break;
+        case "egyptian":
+            calculationMethod = adhan.CalculationMethod.Egyptian()
+            break;
+        case "karachi":
+            calculationMethod = adhan.CalculationMethod.Karachi()
+            break;
+        case "ummalqura":
+            calculationMethod = adhan.CalculationMethod.UmmAlQura()
+            break;
+        case "dubai":
+            calculationMethod = adhan.CalculationMethod.Dubai()
+            break;
+        case "qatar":
+            calculationMethod = adhan.CalculationMethod.Qatar()
+            break;
+        case "kuwait":
+            calculationMethod = adhan.CalculationMethod.Kwait()
+            break;
+        case "moonsightingcommittee":
+            calculationMethod = adhan.CalculationMethod.MoonsightingCommittee()
+            break;
+        case "singapore":
+            calculationMethod = adhan.CalculationMethod.Singapore()
+            break;
+        case "turkey":
+            calculationMethod = adhan.CalculationMethod.Turkey()
+            break;
+        case "tehran":
+            calculationMethod = adhan.CalculationMethod.Tehran()
+            break;
+        case "northamerica":
+            calculationMethod = adhan.CalculationMethod.NorthAmerica()
+            break;
+        case "other":
+            calculationMethod = adhan.CalculationMethod.Other()
+            break;
+        default:
+            break;
+    }
+    
+    switch (_madhab) {
+        case 'shafi':
+            Madhab = adhan.Madhab.Shafi
+            break;
+        case 'hanafi':
+            Madhab = adhan.Madhab.Hanafi
+            break;
+        default:
+            break;
+    }
+
+    
+    $(document).ready(()=> {
+        setup(longitude, latitude, timezone, calculationMethod, Madhab)
+    })
+    setup()
+</script>
 
 <script>
     $('#settingsBtn').on('click', ()=> {
