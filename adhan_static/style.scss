@@ -1,0 +1,13 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+html, body {
+    $secondary: #aeb2b6;
+    background-color: $secondary;
+    overflow: hidden;
+    height: 100%;
+}
+
+.prayerTimesContainer {
+    font-size: 3em;
+}
