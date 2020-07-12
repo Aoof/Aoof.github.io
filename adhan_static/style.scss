@@ -15,10 +15,10 @@ html, body {
 
 @media only screen and (max-width: 780px) {
     html, body {
-        overflow: auto;
+        overflow: auto !important;
     }
 
     .prayerTimesContainer {
-        font-size: .8em;
+        font-size: .8em !important;
     }
 }
