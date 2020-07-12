@@ -1794,6 +1794,12 @@ html, body {
   font-size: 3em;
 }
 
+#moreInfo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 @media only screen and (max-width: 780px) {
   html, body {
     overflow: auto !important;

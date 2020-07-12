@@ -26,6 +26,10 @@
             </div>
         </div>
     </div>
+
+    <div id="moreInfo text-muted">
+        <a href="https://github.com/batoulapps/adhan-js/"><small>Adhan-js was used here.</small></a>
+    </div>
 </body>
     
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -196,12 +200,14 @@
             title: 'What is your longitude?',
             text: coordinates_text,
             inputValue: longitude,
+            inputAttributes: navigator.geolocation ? "disabled" : "",
             input: 'text'
         },
         {
             title: 'What is your latitude?',
             text: coordinates_text,
             inputValue: latitude,
+            inputAttributes: navigator.geolocation ? "disabled" : "",
             input: 'text'
         },
         {
