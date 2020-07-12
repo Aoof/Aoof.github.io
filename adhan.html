@@ -97,7 +97,7 @@
                                                                         Qiyam: ${moment(sunnahTimes.lastThirdOfTheNight).tz(timezone).format('h:mm A')}<br><br>
                                                                     
                                                                         Current Prayer: ${prayerName(prayerTimes.currentPrayer())}<br><br>`
-        setTimeout(setup, 4000)
+        setTimeout(() => setup(longitude, latitude, timezone, calculationMethod, Madhab), 4000)
     }
 
     let longitude = getCookie('longitude') == '' ? 25.3965398 : JSON.parse(getCookie('longitude'))
@@ -150,6 +150,7 @@
             calculationMethod = adhan.CalculationMethod.Other()
             break;
         default:
+            calculationMethod = adhan.CalculationMethod.Dubai()
             break;
     }
     
@@ -161,6 +162,7 @@
             Madhab = adhan.Madhab.Hanafi
             break;
         default:
+            Madhab = adhan.Madhab.Shafi
             break;
     }
 
@@ -168,7 +170,7 @@
     $(document).ready(()=> {
         setup(longitude, latitude, timezone, calculationMethod, Madhab)
     })
-    setup()
+    setup(longitude, latitude, timezone, calculationMethod, Madhab)
 </script>
 
 <script>
@@ -177,8 +179,8 @@
             navigator.geolocation.getCurrentPosition(position => {
                 longitude = position.coords.longitude
                 latitude = position.coords.latitude
-                coordinates_text = 'Information were autofilled since you allowed us to reach your location.'
             });
+            coordinates_text = 'Information were autofilled since you allowed us to reach your location.'
         } else { 
             longitude = None
             latitude = None
