@@ -1,4 +1,4 @@
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'sweetalerts';
 
 
 html, body {
@@ -10,4 +10,15 @@ html, body {
 
 .prayerTimesContainer {
     font-size: 3em;
+}
+
+
+@media only screen and (max-width: 780px) {
+    html, body {
+        overflow: auto;
+    }
+
+    .prayerTimesContainer {
+        font-size: .8em;
+    }
 }
