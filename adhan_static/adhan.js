@@ -8,101 +8,101 @@
 	else
 		root["adhan"] = factory();
 })(this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+return  (function(modules) { 
+ 	
+ 	var installedModules = {};
+
+ 	
+ 	function __webpack_require__(moduleId) {
+
+ 		
+ 		if(installedModules[moduleId]) {
+ 			return installedModules[moduleId].exports;
+ 		}
+ 		
+ 		var module = installedModules[moduleId] = {
+ 			i: moduleId,
+ 			l: false,
+ 			exports: {}
+ 		};
+
+ 		
+ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+ 		
+ 		module.l = true;
+
+ 		
+ 		return module.exports;
+ 	}
+
+
+ 	
+ 	__webpack_require__.m = modules;
+
+ 	
+ 	__webpack_require__.c = installedModules;
+
+ 	
+ 	__webpack_require__.d = function(exports, name, getter) {
+ 		if(!__webpack_require__.o(exports, name)) {
+ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+ 		}
+ 	};
+
+ 	
+ 	__webpack_require__.r = function(exports) {
+ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+ 		}
+ 		Object.defineProperty(exports, '__esModule', { value: true });
+ 	};
+
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	__webpack_require__.t = function(value, mode) {
+ 		if(mode & 1) value = __webpack_require__(value);
+ 		if(mode & 8) return value;
+ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+ 		var ns = Object.create(null);
+ 		__webpack_require__.r(ns);
+ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+ 		return ns;
+ 	};
+
+ 	
+ 	__webpack_require__.n = function(module) {
+ 		var getter = module && module.__esModule ?
+ 			function getDefault() { return module['default']; } :
+ 			function getModuleExports() { return module; };
+ 		__webpack_require__.d(getter, 'a', getter);
+ 		return getter;
+ 	};
+
+ 	
+ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+ 	
+ 	__webpack_require__.p = "";
+
+
+ 	
+ 	return __webpack_require__(__webpack_require__.s = 0);
+ })
+
+ ([
+
+ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// ESM COMPAT FLAG
+
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./src/Coordinates.js
+
 class Coordinates {
   constructor(latitude, longitude) {
     this.latitude = latitude;
@@ -110,7 +110,7 @@ class Coordinates {
   }
 
 }
-// CONCATENATED MODULE: ./src/MathUtils.js
+
 function degreesToRadians(degrees) {
   return degrees * Math.PI / 180.0;
 }
@@ -130,7 +130,7 @@ function quadrantShiftAngle(angle) {
 
   return angle - 360 * Math.round(angle / 360);
 }
-// CONCATENATED MODULE: ./src/DateUtils.js
+
 
 function dateByAddingDays(date, days) {
   const year = date.getFullYear();
@@ -164,14 +164,12 @@ function DateUtils_dayOfYear(date) {
   returnedDayOfYear += date.getDate();
   return returnedDayOfYear;
 }
-// CONCATENATED MODULE: ./src/Astronomical.js
+
 
 
 const Astronomical = {
-  /* The geometric mean longitude of the sun in degrees. */
   meanSolarLongitude: function (julianCentury) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 163 */
 
     const term1 = 280.4664567;
     const term2 = 36000.76983 * T;
@@ -180,10 +178,8 @@ const Astronomical = {
     return unwindAngle(L0);
   },
 
-  /* The geometric mean longitude of the moon in degrees. */
   meanLunarLongitude: function (julianCentury) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 144 */
 
     const term1 = 218.3165;
     const term2 = 481267.8813 * T;
@@ -192,7 +188,6 @@ const Astronomical = {
   },
   ascendingLunarNodeLongitude: function (julianCentury) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 144 */
 
     const term1 = 125.04452;
     const term2 = 1934.136261 * T;
@@ -202,10 +197,8 @@ const Astronomical = {
     return unwindAngle(Omega);
   },
 
-  /* The mean anomaly of the sun. */
   meanSolarAnomaly: function (julianCentury) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 163 */
 
     const term1 = 357.52911;
     const term2 = 35999.05029 * T;
@@ -214,10 +207,8 @@ const Astronomical = {
     return unwindAngle(M);
   },
 
-  /* The Sun's equation of the center in degrees. */
   solarEquationOfTheCenter: function (julianCentury, meanAnomaly) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 164 */
 
     const Mrad = degreesToRadians(meanAnomaly);
     const term1 = (1.914602 - 0.004817 * T - 0.000014 * Math.pow(T, 2)) * Math.sin(Mrad);
@@ -226,12 +217,9 @@ const Astronomical = {
     return term1 + term2 + term3;
   },
 
-  /* The apparent longitude of the Sun, referred to the
-      true equinox of the date. */
   apparentSolarLongitude: function (julianCentury, meanLongitude) {
     const T = julianCentury;
     const L0 = meanLongitude;
-    /* Equation from Astronomical Algorithms page 164 */
 
     const longitude = L0 + Astronomical.solarEquationOfTheCenter(T, Astronomical.meanSolarAnomaly(T));
     const Omega = 125.04 - 1934.136 * T;
@@ -239,12 +227,8 @@ const Astronomical = {
     return unwindAngle(Lambda);
   },
 
-  /* The mean obliquity of the ecliptic, formula
-      adopted by the International Astronomical Union.
-      Represented in degrees. */
   meanObliquityOfTheEcliptic: function (julianCentury) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 147 */
 
     const term1 = 23.439291;
     const term2 = 0.013004167 * T;
@@ -253,21 +237,16 @@ const Astronomical = {
     return term1 - term2 - term3 + term4;
   },
 
-  /* The mean obliquity of the ecliptic, corrected for
-      calculating the apparent position of the sun, in degrees. */
   apparentObliquityOfTheEcliptic: function (julianCentury, meanObliquityOfTheEcliptic) {
     const T = julianCentury;
     const Epsilon0 = meanObliquityOfTheEcliptic;
-    /* Equation from Astronomical Algorithms page 165 */
 
     const O = 125.04 - 1934.136 * T;
     return Epsilon0 + 0.00256 * Math.cos(degreesToRadians(O));
   },
 
-  /* Mean sidereal time, the hour angle of the vernal equinox, in degrees. */
   meanSiderealTime: function (julianCentury) {
     const T = julianCentury;
-    /* Equation from Astronomical Algorithms page 165 */
 
     const JD = T * 36525 + 2451545.0;
     const term1 = 280.46061837;
@@ -281,7 +260,6 @@ const Astronomical = {
     const L0 = solarLongitude;
     const Lp = lunarLongitude;
     const Omega = ascendingNode;
-    /* Equation from Astronomical Algorithms page 144 */
 
     const term1 = -17.2 / 3600 * Math.sin(degreesToRadians(Omega));
     const term2 = 1.32 / 3600 * Math.sin(2 * degreesToRadians(L0));
@@ -293,7 +271,6 @@ const Astronomical = {
     const L0 = solarLongitude;
     const Lp = lunarLongitude;
     const Omega = ascendingNode;
-    /* Equation from Astronomical Algorithms page 144 */
 
     const term1 = 9.2 / 3600 * Math.cos(degreesToRadians(Omega));
     const term2 = 0.57 / 3600 * Math.cos(2 * degreesToRadians(L0));
@@ -305,7 +282,6 @@ const Astronomical = {
     const Phi = observerLatitude;
     const delta = declination;
     const H = localHourAngle;
-    /* Equation from Astronomical Algorithms page 93 */
 
     const term1 = Math.sin(degreesToRadians(Phi)) * Math.sin(degreesToRadians(delta));
     const term2 = Math.cos(degreesToRadians(Phi)) * Math.cos(degreesToRadians(delta)) * Math.cos(degreesToRadians(H));
@@ -315,13 +291,11 @@ const Astronomical = {
     const L = longitude;
     const Theta0 = siderealTime;
     const a2 = rightAscension;
-    /* Equation from page Astronomical Algorithms 102 */
 
     const Lw = L * -1;
     return normalizeToScale((a2 + Lw - Theta0) / 360, 1);
   },
 
-  /* The time at which the sun is at its highest point in the sky (in universal time) */
   correctedTransit: function (approximateTransit, longitude, siderealTime, rightAscension, previousRightAscension, nextRightAscension) {
     const m0 = approximateTransit;
     const L = longitude;
@@ -329,7 +303,6 @@ const Astronomical = {
     const a2 = rightAscension;
     const a1 = previousRightAscension;
     const a3 = nextRightAscension;
-    /* Equation from page Astronomical Algorithms 102 */
 
     const Lw = L * -1;
     const Theta = unwindAngle(Theta0 + 360.985647 * m0);
@@ -348,7 +321,6 @@ const Astronomical = {
     const d2 = declination;
     const d1 = previousDeclination;
     const d3 = nextDeclination;
-    /* Equation from page Astronomical Algorithms 102 */
 
     const Lw = coordinates.longitude * -1;
     const term1 = Math.sin(degreesToRadians(h0)) - Math.sin(degreesToRadians(coordinates.latitude)) * Math.sin(degreesToRadians(d2));
@@ -366,31 +338,21 @@ const Astronomical = {
     return (m + dm) * 24;
   },
 
-  /* Interpolation of a value given equidistant
-      previous and next values and a factor
-      equal to the fraction of the interpolated
-      point's time over the time between values. */
   interpolate: function (y2, y1, y3, n) {
-    /* Equation from Astronomical Algorithms page 24 */
     const a = y2 - y1;
     const b = y3 - y2;
     const c = b - a;
     return y2 + n / 2 * (a + b + n * c);
   },
 
-  /* Interpolation of three angles, accounting for
-      angle unwinding. */
   interpolateAngles: function (y2, y1, y3, n) {
-    /* Equation from Astronomical Algorithms page 24 */
     const a = unwindAngle(y2 - y1);
     const b = unwindAngle(y3 - y2);
     const c = b - a;
     return y2 + n / 2 * (a + b + n * c);
   },
 
-  /* The Julian Day for the given Gregorian date components. */
   julianDay: function (year, month, day, hours) {
-    /* Equation from Astronomical Algorithms page 60 */
     if (typeof hours === 'undefined') {
       hours = 0;
     }
@@ -409,13 +371,10 @@ const Astronomical = {
     return i0 + i1 + D + B - 1524.5;
   },
 
-  /* Julian century from the epoch. */
   julianCentury: function (julianDay) {
-    /* Equation from Astronomical Algorithms page 163 */
     return (julianDay - 2451545.0) / 36525;
   },
 
-  /* Whether or not a year is a leap year (has 366 days). */
   isLeapYear: function (year) {
     if (year % 4 != 0) {
       return false;
@@ -502,8 +461,8 @@ const Astronomical = {
     return daysSinceSolstice;
   }
 };
-/* harmony default export */ var src_Astronomical = (Astronomical);
-// CONCATENATED MODULE: ./src/SolarCoordinates.js
+var src_Astronomical = (Astronomical);
+
 
 
 class SolarCoordinates_SolarCoordinates {
@@ -518,27 +477,16 @@ class SolarCoordinates_SolarCoordinates {
     const dEpsilon = src_Astronomical.nutationInObliquity(T, L0, Lp, Omega);
     const Epsilon0 = src_Astronomical.meanObliquityOfTheEcliptic(T);
     const EpsilonApparent = degreesToRadians(src_Astronomical.apparentObliquityOfTheEcliptic(T, Epsilon0));
-    /* declination: The declination of the sun, the angle between
-        the rays of the Sun and the plane of the Earth's
-        equator, in degrees.
-        Equation from Astronomical Algorithms page 165 */
 
     this.declination = radiansToDegrees(Math.asin(Math.sin(EpsilonApparent) * Math.sin(Lambda)));
-    /* rightAscension: Right ascension of the Sun, the angular distance on the
-        celestial equator from the vernal equinox to the hour circle,
-        in degrees.
-        Equation from Astronomical Algorithms page 165 */
 
     this.rightAscension = unwindAngle(radiansToDegrees(Math.atan2(Math.cos(EpsilonApparent) * Math.sin(Lambda), Math.cos(Lambda))));
-    /* apparentSiderealTime: Apparent sidereal time, the hour angle of the vernal
-        equinox, in degrees.
-        Equation from Astronomical Algorithms page 88 */
 
     this.apparentSiderealTime = Theta0 + dPsi * 3600 * Math.cos(degreesToRadians(Epsilon0 + dEpsilon)) / 3600;
   }
 
 }
-// CONCATENATED MODULE: ./src/SolarTime.js
+
 
 
 
@@ -562,7 +510,7 @@ class SolarTime_SolarTime {
   }
 
   afternoon(shadowLength) {
-    // TODO source shadow angle calculation
+    
     const tangent = Math.abs(this.observer.latitude - this.solar.declination);
     const inverse = shadowLength + Math.tan(degreesToRadians(tangent));
     const angle = radiansToDegrees(Math.atan(1.0 / inverse));
@@ -570,7 +518,7 @@ class SolarTime_SolarTime {
   }
 
 }
-// CONCATENATED MODULE: ./src/TimeComponents.js
+
 class TimeComponents {
   constructor(number) {
     this.hours = Math.floor(number);
@@ -584,7 +532,7 @@ class TimeComponents {
   }
 
 }
-// CONCATENATED MODULE: ./src/Prayer.js
+
 const Prayer = {
   Fajr: 'fajr',
   Sunrise: 'sunrise',
@@ -594,8 +542,8 @@ const Prayer = {
   Isha: 'isha',
   None: 'none'
 };
-/* harmony default export */ var src_Prayer = (Prayer);
-// CONCATENATED MODULE: ./src/Madhab.js
+var src_Prayer = (Prayer);
+
 const Madhab = {
   Shafi: 'shafi',
   Hanafi: 'hanafi'
@@ -612,7 +560,7 @@ function Madhab_shadowLength(madhab) {
       throw "Invalid Madhab";
   }
 }
-// CONCATENATED MODULE: ./src/PrayerTimes.js
+
 
 
 
@@ -640,7 +588,7 @@ class PrayerTimes_PrayerTimes {
     var tomorrowSolarTime = new SolarTime_SolarTime(tomorrow, coordinates);
     var tomorrowSunrise = new TimeComponents(tomorrowSolarTime.sunrise).utcDate(tomorrow.getFullYear(), tomorrow.getMonth(), tomorrow.getDate());
     var night = (tomorrowSunrise - sunsetTime) / 1000;
-    fajrTime = new TimeComponents(solarTime.hourAngle(-1 * calculationParameters.fajrAngle, false)).utcDate(date.getFullYear(), date.getMonth(), date.getDate()); // special case for moonsighting committee above latitude 55
+    fajrTime = new TimeComponents(solarTime.hourAngle(-1 * calculationParameters.fajrAngle, false)).utcDate(date.getFullYear(), date.getMonth(), date.getDate()); 
 
     if (calculationParameters.method == "MoonsightingCommittee" && coordinates.latitude >= 55) {
       nightFraction = night / 7;
@@ -664,7 +612,7 @@ class PrayerTimes_PrayerTimes {
     if (calculationParameters.ishaInterval > 0) {
       ishaTime = dateByAddingMinutes(sunsetTime, calculationParameters.ishaInterval);
     } else {
-      ishaTime = new TimeComponents(solarTime.hourAngle(-1 * calculationParameters.ishaAngle, true)).utcDate(date.getFullYear(), date.getMonth(), date.getDate()); // special case for moonsighting committee above latitude 55
+      ishaTime = new TimeComponents(solarTime.hourAngle(-1 * calculationParameters.ishaAngle, true)).utcDate(date.getFullYear(), date.getMonth(), date.getDate()); 
 
       if (calculationParameters.method == "MoonsightingCommittee" && coordinates.latitude >= 55) {
         nightFraction = night / 7;
@@ -773,14 +721,14 @@ class PrayerTimes_PrayerTimes {
   }
 
 }
-// CONCATENATED MODULE: ./src/HighLatitudeRule.js
+
 const HighLatitudeRule = {
   MiddleOfTheNight: 'middleofthenight',
   SeventhOfTheNight: 'seventhofthenight',
   TwilightAngle: 'twilightangle'
 };
-/* harmony default export */ var src_HighLatitudeRule = (HighLatitudeRule);
-// CONCATENATED MODULE: ./src/CalculationParameters.js
+var src_HighLatitudeRule = (HighLatitudeRule);
+
 
 
 class CalculationParameters_CalculationParameters {
@@ -836,10 +784,10 @@ class CalculationParameters_CalculationParameters {
   }
 
 }
-// CONCATENATED MODULE: ./src/CalculationMethod.js
+
 
 const CalculationMethod = {
-  // Muslim World League
+  
   MuslimWorldLeague: function () {
     let params = new CalculationParameters_CalculationParameters("MuslimWorldLeague", 18, 17);
     params.methodAdjustments = {
@@ -847,7 +795,7 @@ const CalculationMethod = {
     };
     return params;
   },
-  // Egyptian General Authority of Survey
+  
   Egyptian: function () {
     let params = new CalculationParameters_CalculationParameters("Egyptian", 19.5, 17.5);
     params.methodAdjustments = {
@@ -855,7 +803,7 @@ const CalculationMethod = {
     };
     return params;
   },
-  // University of Islamic Sciences, Karachi
+  
   Karachi: function () {
     let params = new CalculationParameters_CalculationParameters("Karachi", 18, 18);
     params.methodAdjustments = {
@@ -863,11 +811,11 @@ const CalculationMethod = {
     };
     return params;
   },
-  // Umm al-Qura University, Makkah
+  
   UmmAlQura: function () {
     return new CalculationParameters_CalculationParameters("UmmAlQura", 18.5, 0, 90);
   },
-  // Dubai
+  
   Dubai: function () {
     let params = new CalculationParameters_CalculationParameters("Dubai", 18.2, 18.2);
     params.methodAdjustments = {
@@ -878,7 +826,7 @@ const CalculationMethod = {
     };
     return params;
   },
-  // Moonsighting Committee
+  
   MoonsightingCommittee: function () {
     let params = new CalculationParameters_CalculationParameters("MoonsightingCommittee", 18, 18);
     params.methodAdjustments = {
@@ -887,7 +835,7 @@ const CalculationMethod = {
     };
     return params;
   },
-  // ISNA
+  
   NorthAmerica: function () {
     let params = new CalculationParameters_CalculationParameters("NorthAmerica", 15, 15);
     params.methodAdjustments = {
@@ -895,15 +843,15 @@ const CalculationMethod = {
     };
     return params;
   },
-  // Kuwait
+  
   Kuwait: function () {
     return new CalculationParameters_CalculationParameters("Kuwait", 18, 17.5);
   },
-  // Qatar
+  
   Qatar: function () {
     return new CalculationParameters_CalculationParameters("Qatar", 18, 0, 90);
   },
-  // Singapore
+  
   Singapore: function () {
     let params = new CalculationParameters_CalculationParameters("Singapore", 20, 18);
     params.methodAdjustments = {
@@ -911,12 +859,12 @@ const CalculationMethod = {
     };
     return params;
   },
-  // Institute of Geophysics, University of Tehran
+  
   Tehran: function () {
     let params = new CalculationParameters_CalculationParameters("Tehran", 17.7, 14, 0, 4.5);
     return params;
   },
-  // Dianet
+  
   Turkey: function () {
     let params = new CalculationParameters_CalculationParameters("Turkey", 18, 17);
     params.methodAdjustments = {
@@ -927,17 +875,17 @@ const CalculationMethod = {
     };
     return params;
   },
-  // Other
+  
   Other: function () {
     return new CalculationParameters_CalculationParameters("Other", 0, 0);
   }
 };
-/* harmony default export */ var src_CalculationMethod = (CalculationMethod);
-// CONCATENATED MODULE: ./src/Qibla.js
+var src_CalculationMethod = (CalculationMethod);
+
 
 
 function qibla(coordinates) {
-  const makkah = new Coordinates(21.4225241, 39.8261818); // Equation from "Spherical Trigonometry For the use of colleges and schools" page 50
+  const makkah = new Coordinates(21.4225241, 39.8261818); 
 
   const term1 = Math.sin(degreesToRadians(makkah.longitude) - degreesToRadians(coordinates.longitude));
   const term2 = Math.cos(degreesToRadians(coordinates.latitude)) * Math.tan(degreesToRadians(makkah.latitude));
@@ -945,7 +893,7 @@ function qibla(coordinates) {
   const angle = Math.atan2(term1, term2 - term3);
   return unwindAngle(radiansToDegrees(angle));
 }
-// CONCATENATED MODULE: ./src/SunnahTimes.js
+
 
 
 class SunnahTimes_SunnahTimes {
@@ -959,15 +907,6 @@ class SunnahTimes_SunnahTimes {
   }
 
 }
-// CONCATENATED MODULE: ./src/Adhan.js
-
-
-
-
-
-
-
-
 
 const adhan = {
   Prayer: src_Prayer,
@@ -980,9 +919,8 @@ const adhan = {
   SunnahTimes: SunnahTimes_SunnahTimes,
   Qibla: qibla
 };
-/* harmony default export */ var Adhan = __webpack_exports__["default"] = (adhan);
+var Adhan = __webpack_exports__["default"] = (adhan);
 
-/***/ })
-/******/ ])["default"];
+})
+ ])["default"];
 });
-//# sourceMappingURL=Adhan.js.map
