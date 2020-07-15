@@ -56,9 +56,9 @@ hr {
 }
 
 .container {
-  padding: 2%;
+  padding: 4% 2%;
   height: fit-content;
-  min-height: 100vh;
+  min-height: 50vh;
   width: -webkit-fill-available;
   overflow: hidden;
   position: relative;
@@ -70,7 +70,7 @@ hr {
   position: absolute;
   text-align: center;
   vertical-align: middle;
-  top: 40vh; left: 0; bottom: 0; right: 0;
+  top: 20vh; left: 0; bottom: 0; right: 0;
 }
 
 .Absolute-Center.is-Fixed {
