@@ -1,3 +1,7 @@
+html {
+  overflow-x: hidden;
+}
+
 html body {
   overflow-x: hidden;
   background-color: #001f3f;
@@ -10,6 +14,7 @@ html body .container {
   margin: 50px 15%;
   display: -ms-grid;
   display: grid;
+  position: relative;
 }
 
 html body .container .profile {
@@ -181,6 +186,16 @@ html body .projects .card {
 
 html body .projects .card a {
   grid-column: 1 span;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  vertical-align: middle;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 html body .projects .card a img {
