@@ -20,7 +20,7 @@
         <div class="aboutme">
             <div class="headline">About me <hr></div>
             <div class="desc">
-                Hey, I am Abdulrahman Mousa, 18 year old self-taught developer/hobbiest. Exposed to
+                Hey, I am Abdulrahman Mousa, <span class="age">17</span> year old self-taught developer/hobbiest. Exposed to
                 coding when I was 10 and ever since then I was fascinated by the vast world of programming
                 I taught myself using multiple sources, famous ones of which are <a href="https://udemy.com/" target="_blank">Udemy, </a> <a href="http://w3schools.com/" target="_blank" rel="noopener noreferrer">W3schools, </a> and experience
                 by testing, practicing, and reading the documenations.
@@ -86,4 +86,13 @@
         </div>
     </div>
 </body>
+<script>
+    var dob = new Date("01/26/2004");  
+    var month_diff = Date.now() - dob.getTime();
+    var age_dt = new Date(month_diff);
+    var year = age_dt.getUTCFullYear();
+    var age = Math.abs(year - 1970); 
+
+    document.querySelector(".age").innerHTML = age;
+</script>
 </html>
