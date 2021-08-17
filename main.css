@@ -181,6 +181,7 @@ html body .projects .card {
 
 html body .projects .card a {
   grid-column: 1 span;
+  text-align: center;
 }
 
 html body .projects .card a img {
