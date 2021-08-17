@@ -1,0 +1,188 @@
+html {
+    body {
+        overflow-x: hidden;
+        background-color: #001f3f;
+        margin: 0;
+        padding: 0;
+
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        
+        .container {
+            margin: 50px 15%;
+            display: grid;
+
+            .profile {
+                width: 200px;
+                border-radius: 50%;
+                border: 2px solid black;
+                margin: 30px;
+                grid-column: 1 span;
+            }
+
+            .headline {
+                grid-column: 2 / 8 span;
+
+                color: white;
+                margin: 60px 0;
+
+                * { margin: 8px 0; }
+                                
+                #name {
+                    font-size: 25pt;
+                }
+
+                #description {
+                    font-size: 18pt;
+                    color: rgba(255, 255, 255, 0.7)    
+                }
+
+                #contact-e {
+                    font-size: 18pt;
+                    color: rgba(180, 180, 255, 0.7);
+                    text-decoration: none;
+                }
+
+                #contact-t {
+                    font-size: 15pt;
+                    color: rgba(180, 180, 255, 0.7);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .aboutme {
+            width: stretch;
+            grid-column: 2 / 8 span;
+
+            color: white;
+            .headline {
+                font-size: 20pt;
+                width: stretch;
+            }
+
+            .desc {
+                a {
+                    color:rgba(180, 180, 255, 0.7);
+                }
+            }
+        }
+
+        .skills {
+            width: stretch;
+            grid-column: 2 / 8 span;
+
+            color: white;
+            .headline {
+                font-size: 20pt;
+                width: stretch;
+            }
+
+            .skill {
+
+                display: grid;
+                position: relative;
+
+                .name {
+                    grid-column: 1 span;
+                    width: 90px;
+                    margin: 10px 0;
+                }
+
+                .bar {
+                    grid-column: 2 / 8 span;
+                    position: relative;
+                }
+
+                .bar::after {
+                    content: "";
+                    height: 4px;
+                    background-color: rgb(255, 255, 255);
+                    position: absolute;
+                    top: 0; bottom: 0; left: 0;
+                    margin: auto;
+                    border-radius: 9px;
+                }
+
+                .bar.py::after { width: 50%; }
+                .bar.js::after { width: 80%; }
+                .bar.node::after { width: 95%; }
+                .bar.express::after { width: 90%; }
+                .bar.html::after { width: 80%; }
+                .bar.css::after { width: 60%; }
+                .bar.cs::after { width: 40%; }
+                .bar.sql::after { width: 55%; }
+
+                .bar::before {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    position: absolute;
+                    top: 0; bottom: 0; right: 0; left: 0;
+                    margin: auto;
+                }
+            }
+        }
+
+
+        .projects {
+            width: stretch;
+            grid-column: 2 / 8 span;
+
+            color: white;
+            .headline {
+                font-size: 20pt;
+                width: stretch;
+            }
+
+            .card {
+                display: grid;
+
+                a {
+                    grid-column: 1 span;
+                    img {
+                        width: 150px;
+                    }
+                }
+                
+                .desc {
+                    margin: 0 30px;
+                    grid-column: 2 / 8 span;
+
+                    .header {
+                        font-size: 18pt;
+                    }
+
+                    p {
+                        color: rgba(255, 255, 255, 0.8);
+                        a {
+                            color: rgba(180, 180, 255, 0.7)
+                        }
+                    }
+                }
+            }
+        }
+        
+
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: -20%; left: -20%; right: -20%;
+        transform: rotate(10deg);
+        background-color: rgba(0, 0, 0, .4);
+        width: 200%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+
+@media only screen and (max-width: 870px) {
+    .container {
+        grid-template-columns: 1fr;
+        * {
+            grid-column: 1 span !important;
+        }
+    }
+}

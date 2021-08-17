@@ -1,242 +1,230 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,500,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
-
-html, body {
+html body {
+  overflow-x: hidden;
+  background-color: #001f3f;
   margin: 0;
   padding: 0;
-  font-family: 'Dancing Script', cursive;
-  scroll-behavior: smooth;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-body {
-  background: rgb(159,168,165);
-  background: linear-gradient(142deg, rgba(159,168,165,1) 0%, rgba(34,208,210,1) 100%);
+html body .container {
+  margin: 50px 15%;
+  display: -ms-grid;
+  display: grid;
 }
 
-.lang-eng {
-  font-family: 'Nunito', sans-serif;
+html body .container .profile {
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 30px;
+  grid-column: 1 span;
 }
 
-nav {
-  position: fixed;
-  width: -webkit-fill-available;
-  background-color: rgba(255, 255, 255, .5);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .3);
+html body .container .headline {
+  grid-column: 2 / 8 span;
+  color: white;
+  margin: 60px 0;
 }
 
-.nav {
-  vertical-align: middle;
-  z-index: 99;
-  display: inline-block;
+html body .container .headline * {
+  margin: 8px 0;
 }
 
-.nav .nav-link {
-  padding: 20px;
-  transition: all .25s  ease-out;
+html body .container .headline #name {
+  font-size: 25pt;
+}
+
+html body .container .headline #description {
+  font-size: 18pt;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+html body .container .headline #contact-e {
+  font-size: 18pt;
+  color: rgba(180, 180, 255, 0.7);
   text-decoration: none;
-  font-family: 'Shadows Into Light', cursive;
-  color: black;
-  font-size: Calc(1.5vw + 5pt);
 }
 
-.nav .nav-img {
-  padding: 0 20px;
-  transition: all .25s  ease-out;
+html body .container .headline #contact-t {
+  font-size: 15pt;
+  color: rgba(180, 180, 255, 0.7);
   text-decoration: none;
-  color: black;
-  width: 4.8vw;
-}
-hr {
-  border: .5px solid rgba(0, 0, 0, .1);
 }
 
-.nav .nav-link:hover, .nav .nav-img:hover {
-  background-color: rgba(255, 255, 255, .6);
-  cursor: pointer;
-}
-
-.container {
-  padding: 4% 2%;
-  height: fit-content;
-  min-height: 50vh;
+html body .aboutme {
   width: -webkit-fill-available;
-  overflow: hidden;
+  width: -moz-available;
+  width: stretch;
+  grid-column: 2 / 8 span;
+  color: white;
+}
+
+html body .aboutme .headline {
+  font-size: 20pt;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+}
+
+html body .aboutme .desc a {
+  color: rgba(180, 180, 255, 0.7);
+}
+
+html body .skills {
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+  grid-column: 2 / 8 span;
+  color: white;
+}
+
+html body .skills .headline {
+  font-size: 20pt;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
+}
+
+html body .skills .skill {
+  display: -ms-grid;
+  display: grid;
   position: relative;
 }
 
-.Absolute-Center {
-  overflow: hidden;
-  margin: auto;
+html body .skills .skill .name {
+  grid-column: 1 span;
+  width: 90px;
+  margin: 10px 0;
+}
+
+html body .skills .skill .bar {
+  grid-column: 2 / 8 span;
+  position: relative;
+}
+
+html body .skills .skill .bar::after {
+  content: "";
+  height: 4px;
+  background-color: white;
   position: absolute;
-  text-align: center;
-  vertical-align: middle;
-  top: 20vh; left: 0; bottom: 0; right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 9px;
 }
 
-.Absolute-Center.is-Fixed {
-  position: fixed;
-  z-index: 999;
+html body .skills .skill .bar.py::after {
+  width: 50%;
 }
 
-.Absolute-Center.is-Responsive {
-  width: 60%; 
-  height: 60%;
-  min-width: 200px;
-  padding: 40px;
+html body .skills .skill .bar.js::after {
+  width: 80%;
 }
 
-.container .container-profile {
-  width: 15%;
-  border: 1px solid rgba(0, 0, 0, .3);
-  border-radius: 4px;
-  margin: 2%;
+html body .skills .skill .bar.node::after {
+  width: 95%;
 }
 
-.container .details-title {
-  text-align: center;
-  margin-top: 45px;
+html body .skills .skill .bar.express::after {
+  width: 90%;
 }
 
-.container .projects-card {
-  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, .4);
-  padding: 2%;
-  margin: 10px;
-  min-width: 54px;
-  max-width: 42vw;
-  float: left;
-  transition: .5s all ease;
+html body .skills .skill .bar.html::after {
+  width: 80%;
 }
 
-.container .projects-card:hover {
-  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, .55);
-  cursor: pointer;
+html body .skills .skill .bar.css::after {
+  width: 60%;
 }
 
-.container .projects-card-img {
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .1);
+html body .skills .skill .bar.cs::after {
+  width: 40%;
+}
+
+html body .skills .skill .bar.sql::after {
+  width: 55%;
+}
+
+html body .skills .skill .bar::before {
+  content: "";
   width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
 }
 
-.container .projects ul {
-  list-style: none;
-  padding: 0;
-}
-
-.container .projects ul li {
-  border: 1px solid rgba(0, 0, 0, .1);
-  padding: 2%;
-  margin: 1% 0;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
-  transition: .5s all ease;
-}
-
-.Custom-a {
-  text-decoration: none !important;
-  color: rgb(0, 0, 0) !important;
-}
-
-.container .projects ul li a {
-  text-decoration: none;
-  color: rgb(150, 150, 255);
-  transition: .2s all ease;
-}
-
-.container .projects ul li a:hover {
-  text-decoration: none;
-  color: rgb(100, 100, 205);
-}
-
-.show-on-scroll {
-  padding-top: 20px;
-  transition: all .5s .25s ease-out;
-}
-
-.show-on-scroll.is-visible {
-  padding-top: unset;
-}
-
-.contact-form {
-  border: 1px solid rgba(0, 0, 0, .1);
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
-  background-color: rgba(255, 255, 255, .4);
-  margin: 12%;
-  vertical-align: middle;
-  height: fit-content;
-  padding: 2% !important;
-}
-
-.contact-form:hover {
-  background-color: rgba(255, 255, 255, .55);
-  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.3);
-}
-
-.form-control {
+html body .projects {
   width: -webkit-fill-available;
-  border: 1px solid rgba(0, 0, 0, .1);
-  padding: .7em !important;
-  border-radius: .7em;
-  margin-bottom: 12px;
-  font-family: sans-serif;
-}
-
-label {
-  color: black;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 2px;
-}
-.btn {
-  border: none;
-  padding: .7em !important;
+  width: -moz-available;
+  width: stretch;
+  grid-column: 2 / 8 span;
   color: white;
-  background-color: #39CCCC;
-  transition: 1s all ease;
-  border-radius: .7em;
-  width: 12%;
 }
 
-.btn:hover {
-  cursor: pointer;
-  background-color: #7FDBFF;
+html body .projects .headline {
+  font-size: 20pt;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
 }
 
-@media only screen and (max-width: 780px) {
-  .nav {
-    text-align: center;
-  }
-  
-  .nav .nav-link {
-    padding: 10px;
-  }
-  
-  .projects-card {
-    max-width: -webkit-fill-available !important;
-    width: -webkit-fill-available !important;
-    float: none;
-  }
-  
-  .show-on-scroll {
-    padding-top: 5px;
-    transition: all .5s .25s ease-out;
-  }
-
-  .show-on-scroll.is-visible {
-    padding-top: unset;
-  }
-  
-  .Absolute-center {
-    top: 0 !important;
-  }
-
-  
-  .contact-form {
-    margin: 20px;
-    width: -webkit-fill-available;
-  }
+html body .projects .card {
+  display: -ms-grid;
+  display: grid;
 }
 
-iframe {
- overflow: hidden; 
+html body .projects .card a {
+  grid-column: 1 span;
 }
+
+html body .projects .card a img {
+  width: 150px;
+}
+
+html body .projects .card .desc {
+  margin: 0 30px;
+  grid-column: 2 / 8 span;
+}
+
+html body .projects .card .desc .header {
+  font-size: 18pt;
+}
+
+html body .projects .card .desc p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+html body .projects .card .desc p a {
+  color: rgba(180, 180, 255, 0.7);
+}
+
+html body::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  right: -20%;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 200%;
+  height: 100%;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 870px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .container * {
+    grid-column: 1 span !important;
+  }
+}
+/*# sourceMappingURL=main.css.map */
