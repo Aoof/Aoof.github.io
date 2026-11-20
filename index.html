@@ -1,98 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-    <title>Aoof</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aoof Mousa: projects and code</title>
+<meta name="description" content="Projects and code by Abdulrahman (Aoof) Mousa, a Computer Science Technology student and web developer in Montreal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F4F6;
+    --ink: #16202B;
+    --muted: #5A6673;
+    --rule: #D5DBE1;
+    --blue: #0072B0;
+    --orange: #E8711A;
+    --measure: 68ch;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Schibsted Grotesk", system-ui, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+  a { color: var(--blue); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 2px; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+  /* Header */
+  .intro { padding: 4.5rem 0 3rem; border-bottom: 2px solid var(--ink); }
+  .intro h1 {
+    font-size: clamp(2.6rem, 7vw, 5.25rem);
+    line-height: 0.98;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin: 0 0 1.5rem;
+  }
+  .intro h1 .aka { color: var(--muted); font-weight: 500; }
+  .intro p { max-width: var(--measure); margin: 0 0 1.25rem; font-size: 1.2rem; }
+  .contact { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding: 0; margin: 0; list-style: none; font-weight: 500; }
+
+  /* Section headings */
+  h2 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 0.25rem; }
+  .section-note { color: var(--muted); margin: 0 0 2rem; max-width: var(--measure); }
+  section { padding: 3.5rem 0; }
+
+  /* Featured */
+  .featured { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; margin: 0; padding: 0; list-style: none; }
+  .featured li { border-top: 1px solid var(--rule); padding: 1.5rem 0 2rem; }
+  .featured h3 { font-size: 1.35rem; font-weight: 700; margin: 0 0 0.4rem; letter-spacing: -0.01em; }
+  .featured h3 a { color: var(--ink); text-decoration: none; }
+  .featured h3 a:hover { color: var(--blue); }
+  .featured p { margin: 0 0 0.6rem; max-width: 52ch; }
+  .stack { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.6rem; }
+  .links { display: flex; gap: 1.25rem; font-weight: 500; font-size: 0.95rem; }
+
+  /* Timeline */
+  .year { display: grid; grid-template-columns: 13.5rem minmax(0, 1fr); gap: 2rem; border-top: 2px solid var(--ink); padding: 1.25rem 0 2.5rem; }
+  .year-num {
+    font-size: clamp(3rem, 7vw, 4.75rem);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--orange);
+    margin: 0;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+  }
+  .repos { list-style: none; margin: 0; padding: 0; }
+  .repos li { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 1.25rem; padding: 0.7rem 0; border-bottom: 1px solid var(--rule); }
+  .repos li:last-child { border-bottom: 0; }
+  .repos a { font-weight: 500; overflow-wrap: anywhere; }
+  .repos p { margin: 0; }
+  .repos .lang { color: var(--muted); font-size: 0.92rem; }
+
+  footer { border-top: 2px solid var(--ink); padding: 1.5rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 800px) {
+    .featured { grid-template-columns: 1fr; }
+    .year { grid-template-columns: 1fr; gap: 0.75rem; }
+    .year-num { position: static; }
+    .repos li { grid-template-columns: 1fr; gap: 0.15rem; }
+    .intro { padding-top: 3rem; }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <img src="./profile.jpg" alt="profile" class="profile">
-        <div class="headline">
-            <div id="name">Abdulrahman Mousa</div>
-            <div id="description">Toronto, ON H1T 2R3</div>
-            <div><a href="mailto:aoof.mousa@gmail.com" id="contact-e">aoof.mousa@gmail.com</a></div>
-            <div><a href="tel:+15147177233" id="contact-t">+1 (514) 717-7233</a></div>
-        </div>
+<header class="intro">
+  <div class="wrap">
+    <h1>Abdulrahman Mousa <span class="aka">(Aoof)</span></h1>
+    <p>Computer Science Technology student at Collège LaSalle in Montreal, graduating in 2027. I build websites, desktop apps and small tools, and I spent close to three years testing games for PlayStation, Xbox and Nintendo releases.</p>
+    <p>This page indexes my public code. For client work and the full story, see my portfolio.</p>
+    <ul class="contact">
+      <li><a href="https://aoof.ca">Portfolio: aoof.ca</a></li>
+      <li><a href="https://github.com/Aoof">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/aoof">LinkedIn</a></li>
+      <li><a href="mailto:aoof.mousa@gmail.com">aoof.mousa@gmail.com</a></li>
+    </ul>
+  </div>
+</header>
 
-        <div class="aboutme">
-            <div class="headline">About me <hr></div>
-            <div class="desc">
-                Hey, I am Abdulrahman Mousa, <span class="age">17</span> year old self-taught developer/hobbiest. Exposed to
-                coding when I was 10 and ever since then I was fascinated by the vast world of programming.
-                I taught myself using multiple sources, famous ones of which are <a href="https://udemy.com/" target="_blank">Udemy, </a> <a href="http://w3schools.com/" target="_blank" rel="noopener noreferrer">W3schools, </a> and experience
-                by testing, practicing, and reading the documenations.
-            </div>
-        </div>
-
-        <div class="skills">
-            <div class="headline">Skills <hr></div>
-            <div class="details">
-                <div class="skill">
-                    <div class="name">Python</div>
-                    <div class="bar py"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">JavaScript</div>
-                    <div class="bar js"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">Node.js</div>
-                    <div class="bar node"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">Express.js</div>
-                    <div class="bar express"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">HTML5</div>
-                    <div class="bar html"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">CSS & SCSS</div>
-                    <div class="bar css"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">C#</div>
-                    <div class="bar cs"></div>
-                </div>
-                <div class="skill">
-                    <div class="name">MySQL</div>
-                    <div class="bar sql"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="projects">
-            <div class="headline">Projects <hr></div>
-            <div class="details">
-                <div class="card">
-                    <a href="http://haconsultation.com" target="_blank" rel="noopener noreferrer">
-                        <img src="./ha.png" alt="">
-                    </a>
-
-                    <div class="desc">
-                        <div class="header">H&A Consultation</div>
-                        <p>
-                            Aviation consulting provided by Al Moosa & Abdulkarem Mousa.<br>
-                            Built using Wordpress hosted on bluehost with a domain from GoDaddy.<br>
-                            You can visit the website on <a href="http://haconsultation.com/" target="_blank" rel="noopener noreferrer">http://haconsultation.com/</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<main>
+  <section aria-labelledby="featured-title">
+    <div class="wrap">
+      <h2 id="featured-title">Start here</h2>
+      <p class="section-note">Six projects that show the range: web, desktop, data and games.</p>
+      <ul class="featured">
+        <li>
+          <h3><a href="https://github.com/Aoof/modrinth-importer">Modrinth Importer</a></h3>
+          <p>Converts Minecraft modpacks from CurseForge, Prism, ATLauncher and other launchers into Modrinth packs, and publishes mods to Modrinth. One desktop app and one CLI.</p>
+          <p class="stack">Rust, Tauri, Svelte 5</p>
+          <div class="links"><a href="https://github.com/Aoof/modrinth-importer">Code</a><a href="https://github.com/Aoof/modrinth-importer/releases">Releases</a></div>
+        </li>
+        <li>
+          <h3><a href="https://github.com/Aoof/nisan-wetland-analysis">NISAN</a></h3>
+          <p>Flood and wetland watch for the lower Coatzacoalcos basin in Mexico, combining radar, soil-moisture and river data into one map with plain risk levels. Built in two days with a team of three for the NASA Space Apps Challenge.</p>
+          <p class="stack">Python, FastAPI, TypeScript, MapLibre GL, Docker</p>
+          <div class="links"><a href="https://github.com/Aoof/nisan-wetland-analysis">Code</a></div>
+        </li>
+        <li>
+          <h3><a href="https://github.com/Aoof/clinic-management">Clinic Management</a></h3>
+          <p>Desktop app for running a health clinic: role-based login, appointments, patient records, scheduling and reports. Team of three; I wrote 66 of 107 commits and designed all the UI. Perfect grade.</p>
+          <p class="stack">C#, Windows Forms, Entity Framework, SQL Server</p>
+          <div class="links"><a href="https://github.com/Aoof/clinic-management">Code</a></div>
+        </li>
+        <li>
+          <h3><a href="https://github.com/Aoof/lci-database-manager">LCI Database Manager</a></h3>
+          <p>A web app for creating tables, editing rows and managing constraints, on a seven-table schema in third normal form. I wrote about 7,900 of its 9,000 lines.</p>
+          <p class="stack">SvelteKit, TypeScript, PostgreSQL on Neon, Vercel</p>
+          <div class="links"><a href="https://github.com/Aoof/lci-database-manager">Code</a></div>
+        </li>
+        <li>
+          <h3><a href="https://github.com/Aoof/svelte-aoof-ca">aoof.ca</a></h3>
+          <p>My portfolio site, containerized and redeployed to my own Hetzner server by GitHub Actions on every push, with Sveltia CMS for content edits.</p>
+          <p class="stack">SvelteKit, TypeScript, Tailwind CSS, Docker, GitHub Actions</p>
+          <div class="links"><a href="https://github.com/Aoof/svelte-aoof-ca">Code</a><a href="https://aoof.ca">Live site</a></div>
+        </li>
+        <li>
+          <h3><a href="https://github.com/Aoof/MyHouseIsBuiltForYou">My House Is Built for You</a></h3>
+          <p>A Unity game made by a team of four at the Gamerella 2025 game jam. I wrote the player interaction, dialogue, task menu and end-of-day judgement scripts.</p>
+          <p class="stack">Unity, C#</p>
+          <div class="links"><a href="https://github.com/Aoof/MyHouseIsBuiltForYou">Code</a></div>
+        </li>
+      </ul>
     </div>
-</body>
-<script>
-    var dob = new Date("01/26/2004");  
-    var month_diff = Date.now() - dob.getTime();
-    var age_dt = new Date(month_diff);
-    var year = age_dt.getUTCFullYear();
-    var age = Math.abs(year - 1970); 
+  </section>
 
-    document.querySelector(".age").innerHTML = age;
-</script>
+  <section aria-labelledby="all-title">
+    <div class="wrap">
+      <h2 id="all-title">Everything else, by year</h2>
+      <p class="section-note">Personal projects, hackathons and Collège LaSalle coursework, grouped by the year each one started.</p>
+
+      <div class="year">
+        <p class="year-num">2026</p>
+        <ul class="repos">
+          <li><a href="https://github.com/Aoof/montreal-pools-scraper">montreal-pools-scraper</a><p>Turns Montreal's public pool listings into structured data, with a MySQL page cache and a CLI. <span class="lang">Python</span></p></li>
+          <li><a href="https://github.com/Aoof/elite-earthquake-tracker">elite-earthquake-tracker</a><p>Map of magnitude 4.5+ earthquakes from the USGS API, with date filters. <span class="lang">SvelteKit, MapLibre GL</span></p></li>
+          <li><a href="https://github.com/Aoof/lci-struct-de-donnees">lci-struct-de-donnees</a><p>Data structures from scratch, with unit tests and complexity benchmarks. <span class="lang">C#, xUnit, BenchmarkDotNet</span></p></li>
+          <li><a href="https://github.com/Aoof/hytale-merchantree">hytale-merchantree</a><p>Open-source economy plugin for Hytale servers. <span class="lang">Java</span></p></li>
+          <li><a href="https://github.com/Aoof/codage-de-huffman">codage-de-huffman</a><p>Huffman coding for text compression in a console app. <span class="lang">C#</span></p></li>
+        </ul>
+      </div>
+
+      <div class="year">
+        <p class="year-num">2025</p>
+        <ul class="repos">
+          <li><a href="https://github.com/Aoof/french-word-list">french-word-list</a><p>Flashcards for the 10,000 most common French words, with gender, verb group and definitions. <span class="lang">Python, Flask, SQLite</span></p></li>
+          <li><a href="https://github.com/Aoof/lci-databases-ii-project">lci-databases-ii-project</a><p>Oracle PL/SQL programs using cursors and BULK COLLECT. <span class="lang">PL/SQL</span></p></li>
+          <li><a href="https://github.com/Aoof/lci-django-project">lci-django-project</a><p>Business directory with a Product model, admin and sample data. <span class="lang">Django</span></p></li>
+          <li><a href="https://github.com/Aoof/human-resources-manager">human-resources-manager</a><p>Three-tier employee records app on SQL Server. <span class="lang">C#, Windows Forms</span></p></li>
+          <li><a href="https://github.com/Aoof/multitier-contacts-list">multitier-contacts-list</a><p>Contact manager built with a multi-tier architecture. <span class="lang">C#, Windows Forms</span></p></li>
+          <li><a href="https://github.com/Aoof/contacts-list-app">contacts-list-app</a><p>Two contact managers: one on XML files, one on SQL Server LocalDB. <span class="lang">C#, ADO.NET</span></p></li>
+          <li><a href="https://github.com/Aoof/pdf-cal-generator">pdf-cal-generator</a><p>Printable PDF calendar with Islamic holidays, Ramadan and Eid highlighted. <span class="lang">Python, matplotlib</span></p></li>
+          <li><a href="https://github.com/Aoof/rules-guessing-game">rules-guessing-game</a><p>Party game that deals random secret rules to act out. <span class="lang">Node.js, Express</span></p></li>
+          <li><a href="https://github.com/Aoof/wordle-solver">wordle-solver</a><p>Suggests likely Wordle answers from each guess's feedback. <span class="lang">Python</span></p></li>
+          <li><a href="https://github.com/Aoof/recipes-aoof-ca">recipes-aoof-ca</a><p>The earlier aoof.ca, with a private shared recipe book behind a login. <span class="lang">SvelteKit, Express, MongoDB</span></p></li>
+          <li><a href="https://github.com/Aoof/lci-portfolio-website">lci-portfolio-website</a><p>Course portfolio with dark mode, project modals and form validation. <span class="lang">Bootstrap 5, jQuery</span> <a href="https://aoof.github.io/lci-portfolio-website/">Live</a></p></li>
+          <li><a href="https://github.com/Aoof/tailwind-theme-manager">tailwind-theme-manager</a><p>Builds Tailwind CSS themes from OKLCH colours, with import and export. <span class="lang">JavaScript</span> <a href="https://aoof.github.io/tailwind-theme-manager/">Live</a></p></li>
+          <li><a href="https://github.com/Aoof/vehicles-management-system">vehicles-management-system</a><p>Nine vehicle types through an inheritance hierarchy, with release builds from GitHub Actions. <span class="lang">C#, .NET 9</span></p></li>
+          <li><a href="https://github.com/Aoof/movie-collection-system">movie-collection-system</a><p>Searchable movie collection with ES modules and classes. <span class="lang">JavaScript</span> <a href="https://aoof.github.io/movie-collection-system/">Live</a></p></li>
+          <li><a href="https://github.com/Aoof/csharp-data-structures">csharp-data-structures</a><p>Common data structures for the object-oriented programming course. <span class="lang">C#</span></p></li>
+          <li><a href="https://github.com/Aoof/university-enrollment-system">university-enrollment-system</a><p>Command-line system for managing students and professors. <span class="lang">C#</span></p></li>
+          <li><a href="https://github.com/Aoof/employee-management-system">employee-management-system</a><p>Interfaces, abstract classes, custom exceptions and file I/O. <span class="lang">C#</span></p></li>
+          <li><a href="https://github.com/Aoof/library-management-website">library-management-website</a><p>Core book management for a small library. <span class="lang">JavaScript</span></p></li>
+          <li><a href="https://github.com/Aoof/polymorphism-vehicles-program">polymorphism-vehicles-program</a><p>Polymorphism and method overriding across vehicle types. <span class="lang">C#</span></p></li>
+          <li><a href="https://github.com/Aoof/csharp-animal-program">csharp-animal-program</a><p>Inheritance, constructors and validated properties. <span class="lang">C#</span></p></li>
+          <li><a href="https://github.com/Aoof/travel-website">travel-website</a><p>One-page travel site with a carousel and cards. <span class="lang">Bootstrap 4</span> <a href="https://aoof.github.io/travel-website/">Live</a></p></li>
+          <li><a href="https://github.com/Aoof/csharp-computer-store">csharp-computer-store</a><p>Inventory management for a computer store. <span class="lang">C#</span></p></li>
+        </ul>
+      </div>
+
+      <div class="year">
+        <p class="year-num">2024</p>
+        <ul class="repos">
+          <li><a href="https://github.com/Aoof/factoid-project">factoid-project</a><p>Answers who, where, when and how-many questions from text you give it, in a styled console UI. <span class="lang">C#</span></p></li>
+          <li><a href="https://github.com/Aoof/operation-redacted">operation-redacted</a><p>Godot game played with a custom USB controller, built at the Project Icarus hackathon. I wrote the Python serial bridge and about 640 lines of GDScript. <span class="lang">Godot, GDScript, Python</span></p></li>
+          <li><a href="https://github.com/Aoof/nvim-config">nvim-config</a><p>My Neovim setup: lazy.nvim, native LSP through Mason, works on Windows, macOS and Linux. <span class="lang">Lua</span></p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Abdulrahman (Aoof) Mousa, Montreal. Source for this page: <a href="https://github.com/Aoof/Aoof.github.io">Aoof.github.io</a>.</div>
+</footer>
+</body>
 </html>
